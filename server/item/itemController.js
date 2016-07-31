@@ -10,16 +10,11 @@ var getItem = Q.nbind(Item.findOne, Item);
 
 
 // create a new item in database
-module.exports.createItem = function(req, res) {
-  makeItem(req.body)
+module.exports.createItem = function(item) {
+  makeItem(item)
   .then(function(newItem){
-    console.log(newItem);
-    res.status(201);
-    res.send(newItem);
+    //emit new item created notification
   })
-  .fail(function(err){
-    res.sendStatus(404);
-  });
 };
 
 // fetch all items from database
