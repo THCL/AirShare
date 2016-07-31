@@ -1,4 +1,4 @@
-<!-- BEGIN NAV -->
+ BEGIN NAV -->
 <nav class="navbar navbar-inverse nav-fixed-top">
  <div>
   <img ng-src="../images/goods.jpg" class="img-responsive banner">
@@ -92,9 +92,7 @@
      <br>
      <div ng-repeat="list in yourItems | filter: {'email' : email} | orderBy: 'created_at':true">
       <div class="col-xs-6 col-md-3">
-        <a class="thumbnail">
-          <img ng-src="../images/{{list.category}}.png">
-        </a>
+        <img width=100 ng-src="{{list.image}}">
       </div>
        <strong> Item Name: </strong>  {{list.name}}
        <br>
@@ -118,9 +116,7 @@
      <br>
      <div ng-repeat="list in yourItems | filter: {'renter': email} | orderBy: 'created_at':true">
       <div class="col-xs-6 col-md-3">
-        <a class="thumbnail">
-          <img ng-src="../images/{{list.category}}.png">
-        </a>
+        <img class="img-thumbnail" ng-src="{{list.image}}">
       </div>
        <strong> Item Name: </strong>  {{list.name}}
        <br>
@@ -150,9 +146,7 @@
    <div class="searchResults" ng-init="refresh()" ng-repeat="list in query | filter:searchBox | orderBy: 'category'">
      <div class="col-sm-4">
       <div class="col-xs-6 col-md-4">
-        <a class="thumbnail">
-          <img ng-src="../images/{{list.category}}.png">
-        </a>
+        <img class="img-thumbnail" ng-src="{{list.image}}">
       </div>
 
       <div>
@@ -173,4 +167,4 @@
 
    </div>
   </div><!-- END OF ROW-->
-</div><!-- END OF CONTAINER-->
+</div><!-- END OF CONTAINER
