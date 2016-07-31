@@ -32,7 +32,7 @@ io.on('connection', function(socket) {
   })
 
   socket.on('createItem', function(item) {
-    itemController.createItem({ body: item})
+    itemController.createItem(item)
     io.emit('yourListings');
   })
 
