@@ -3,7 +3,7 @@ var mongoose = require('mongoose');
 var bodyParser = require('body-parser');
 var itemController = require('./item/itemController.js');
 var Item = require('./item/itemModel.js');
-var stripeKey = require('../Client/env/config.js').stripeKey;
+var stripeKey = process.env.STRIPE_KEY || require('../Client/env/config.js').stripeKey;
 var stripe = require("stripe")(stripeKey);
 
 var app = express();
@@ -19,7 +19,6 @@ var Sugar = require('sugar'); // syntactic sugar library (used specifically for 
 var nodemailer = require('nodemailer'); // used to send email from node
 var sgTransport = require('nodemailer-sendgrid-transport'); // for SendGrid (email provider) to work with nodemailer
 var sgKey = process.env.SEND_GRID_KEY || require('../Client/env/config.js').sgKey;
-var stripeKey = process.env.STRIPE_KEY || require('../Client/env/config.js').stripeKey;
 
 // middleware
 app.use(bodyParser.urlencoded({extended: true}));
@@ -118,7 +117,7 @@ agenda.define('send email alert', function(job, done) {
       secure: true,
       strictSSL: false,
       auth: {
-        api_key: stripeKey
+        api_key: sgKey
       }
     }
 
