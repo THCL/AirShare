@@ -1,10 +1,9 @@
 <!-- BEGIN NAV -->
 <nav class="navbar navbar-inverse nav-fixed-top">
- <div>
-  <img ng-src="../images/goods.jpg" class="img-responsive banner">
-  </div>
  <div class="container">
-   <a class="navbar-brand" href='#/'> AirList </a>
+   <div class="navbar-brand">
+     <div class="logo"> AirShare </div>
+   </div>
    <div class="navbar-form">
      <select ng-model="selectedOption" ng-init="selectedOption = options[0].category" class="form-control">
        <option ng-repeat="x in options" value="{{x.category}}">{{x.category}}</option>

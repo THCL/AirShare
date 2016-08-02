@@ -1,11 +1,10 @@
 <!-- BEGIN NAV -->
 <!-- navbar with a banner image, dropdown selection, searh, logout, your account, all listings button    -->
 <nav class="navbar navbar-inverse nav-fixed-top">
-  <div>
-  <img src="../images/goods.jpg" class="img-responsive banner">
-  </div>
    <div class="container ">
-     <a class="navbar-brand" href='#/'> AirList </a>
+     <div class="navbar-brand">
+       <div class="logo"> AirShare </div>
+     </div>
      <div class="navbar-form ">
        <select ng-model="selectedOption" ng-init="selectedOption = options[0].category" class="form-control">
          <option ng-repeat="x in options" value="{{x.category}}">
@@ -49,8 +48,8 @@ can send email to user by accessing email property of object -->
          <strong> Rental Period: </strong> {{list.days}} days
          <br>
          <strong> {{ list.rentable  ?  "Available Now"  : "Not Available" }} </strong>
-         <button class="btn-success" ng-click="rent(list)">Rent</button>
-         <button class = "btn-primary" ng-click="sendEmail(list)">Contact Owner</button>
+         <button type= "button" class= "btn btn-primary" ng-click="rent(list)">Rent</button>
+         <button class ="btn-primary" ng-click="sendEmail(list)">Contact Owner</button>
        </div>
      </div>
    </div>
@@ -59,16 +58,16 @@ can send email to user by accessing email property of object -->
 
  <!-- display after adding/deleting items -->
 <!--  run generalListings to load lists  -->
-<div class="container" ng-hide="showme">
+<div class="container all-list-container" ng-hide="showme">
  <div class="row" ng-hide="showme">
    <h2 > All Listings: </h2>
    <br>
    <div ng-if="list.category !== undefined" ng-repeat="list in lists">
-   <div class="col-sm-12">
-      <div class="col-xs-6 col-md-2">
+   <div class="col-sm-12 listItem">
+      <div class="col-xs-12 col-md-3">
         <img class="img-thumbnail" ng-src="{{list.image}}">
       </div>
-     <div class="col-xs-6 col-md-4">
+     <div class="col-xs-6 col-md-4 details">
        <strong> Item Name: </strong> {{list.name}}
        <br>
        <strong> Category: </strong> {{list.category}}
@@ -90,6 +89,35 @@ can send email to user by accessing email property of object -->
     </div><!-- End of col-sm-12 -->
    </div><!-- End of lists div -->
  </div><!-- End of row -->
+ <footer class ="footer">
+    <ul class="list-inline">
+      <li>
+        <a href="https://github.com/heatherpark" target="_blank"> Product Owner: Heather Park <span class="fa-stack fa-lg">
+            <i class="fa fa-circle fa-stack-2x"></i>
+            <i class="fa fa-github-alt fa-stack-1x fa-inverse"></i>
+        </span></a>
+      </li>
+      <li>
+        <a href="https://github.com/taylorpage" target="_blank"> Scrum Master: Taylor Page <span class="fa-stack fa-lg">
+            <i class="fa fa-circle fa-stack-2x"></i>
+            <i class="fa fa-github-alt fa-stack-1x fa-inverse"></i>
+        </span></a>
+      </li>
+      <li>
+        <a href="https://github.com/llo1" target="_blank"> Lead Engineer: Louis Lo <span class="fa-stack fa-lg">
+            <i class="fa fa-circle fa-stack-2x"></i>
+            <i class="fa fa-github-alt fa-stack-1x fa-inverse"></i>
+        </span></a>
+      </li>
+      <li>
+        <a href="http://github.com/mcpatte" target="_blank"> Lead Engineer: Chase Patterson <span class="fa-stack fa-lg">
+            <i class="fa fa-circle fa-stack-2x"></i>
+            <i class="fa fa-github-alt fa-stack-1x fa-inverse"></i>
+        </span></a>
+      </li>
+    </ul>
+    <p>&#169; 2016 AirShare. Built with MEAN stack </p>
+  </footer>
 </div> <!-- End of container -->
 
 

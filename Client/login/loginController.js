@@ -12,7 +12,7 @@ angular.module('loginController', ['app'])
 
     $scope.loginWithFacebook = function(){
       auth.signin({
-        connection: 'facebook'
+        connection: 'google-oauth2'
       });
     }
 //clears the profile and JWT token from localStorage, effectively logging the person out and returning them to the home.html page where it will ask them to log in again.
