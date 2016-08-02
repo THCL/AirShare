@@ -101,6 +101,7 @@ angular.module('app.factories', ['userAccountController', 'loginController'])
     var yourListings = function() {
     //in order to sort by a person's listing, we grab their email address out of the localStorage. It was stored there after the person logged in with OAuth. If OAuth is not used, another method of getting their email must be used, or just set the person's email address in localStorage in the same place and let the existing code stay the same.
       this.email = JSON.parse(window.localStorage.profile).email;
+      console.log(this.email)
       //this.refreshUserListings();
       socketio.emit('getUserItems', this.email);
     }

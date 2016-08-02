@@ -1,9 +1,7 @@
-<div class="container" ng-controlelr='loginController'>
-
+<div class="container login-container" ng-controlelr='loginController'>
+    <h1 class="col-xs-12 text-center main-logo">AirShare</h1>
     <div class="center-form panel">
       <div class="panel-body">
-        <h4 class="text-center"><i class="ion-log-in"></i> Log in</h4>
-
         <form name="loginForm" ng-submit="doLogin(email, password)" novalidate>
           <div class="form-group has-feedback" ng-class="{ 'has-error': loginForm.email.$invalid && loginForm.email.$dirty }">
             <input server-error class="form-control input-lg" type="text" name="email" ng-model="email" placeholder="Email" required autofocus>
@@ -28,7 +26,7 @@
           <p class="text-center text-muted">
             <strong>OR</strong>
           </p>
-          <button type="button" class="btn btn-block btn-primary" ng-click="loginWithFacebook()">Login with Facebook</button>
+          <button type="button" class="btn btn-block btn-primary" ng-click="loginWithFacebook()">Login with Google</button>
           <br/>
           <p class="text-center text-muted">
             <small>Don't have an account yet? <a href="#/signUp">Sign up</a></small>

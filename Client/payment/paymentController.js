@@ -24,8 +24,8 @@ angular.module('payment', [])
         // in DB using socketio event handlers
         var item = paymentFactory.chargedItem;
         item.rentable = false;
-        console.log(item)
         item.renter = JSON.parse(window.localStorage.profile).email;
+        console.log(item.renter);
         socketio.emit('update', item);
       });
     }
